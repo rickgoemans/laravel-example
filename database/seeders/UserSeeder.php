@@ -14,6 +14,14 @@ class UserSeeder extends Seeder
             return;
         }
 
+        /** @var User $adminUser */
+        $adminUser = User::factory([
+            'name'     => 'Admin',
+            'email'    => 'admin@admin.com',
+            'password' => 'admin',
+        ])
+            ->create();
+
         User::factory()
             ->count(10)
             ->create();
