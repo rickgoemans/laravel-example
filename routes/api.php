@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +23,4 @@ Route::middleware('auth:sanctum')
                     return $request->user();
                 });
             });
-    });
-
-Route::prefix('auth')
-    ->name('auth.')
-    ->group(function () {
-        Route::post('login', [AuthenticatedSessionController::class, 'store'])
-            ->name('login');
     });
